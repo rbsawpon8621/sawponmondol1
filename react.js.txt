@@ -1,0 +1,41 @@
+import React from "react"; import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button";
+
+const skills = [ "HTML", "CSS", "Figma", "Bootstrap", "Tailwind", "Vanilla JavaScript", "React Basic", "React Basic Project", "React Context API", "React Context API Project", "Redux Basic", "React Redux Advance Project", "NEXT JS Basic", "NEXT JS Project" ];
+
+const projects = [ { name: "React Basic Project", link: "#" }, { name: "React Context API Project", link: "#" }, { name: "React Redux Advance Project", link: "#" }, { name: "NEXT JS Project", link: "#" } ];
+
+export default function Portfolio() { return ( <div className="p-6 space-y-6"> <header className="text-center"> <h1 className="text-3xl font-bold">Swapon Mondal</h1> <p className="text-lg">Frontend Developer | Fiverr Freelancer</p> </header>
+
+<section>
+    <h2 className="text-xl font-semibold">My Skills</h2>
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-3">
+      {skills.map((skill, index) => (
+        <Card key={index} className="p-4 text-center">
+          <CardContent>{skill}</CardContent>
+        </Card>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2 className="text-xl font-semibold">Projects</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+      {projects.map((project, index) => (
+        <Card key={index} className="p-4 text-center">
+          <CardContent>
+            <h3 className="font-medium">{project.name}</h3>
+            <Button className="mt-2" asChild>
+              <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>
+            </Button>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </section>
+
+  <footer className="text-center mt-6">
+    <p>Contact me: <a href="mailto:rbsawpon79@gmail.com" className="text-blue-500">rbsawpon79@gmail.com</a></p>
+  </footer>
+</div>
+
+); }
